@@ -16,16 +16,9 @@ const images = [
 ];
 
 const list = document.querySelector('ul.gallery');
-const arrs = []
 
-for (const image of images) {
-  let itemList = document.createElement('li');
-  let icon = document.createElement('img');
-  icon.setAttribute('src', image.url);
-  icon.setAttribute('alt', image.alt);
-  itemList.appendChild(icon);
-  arrs.push(itemList.outerHTML);
-}
+const icon = images
+  .map(image => `<li><img src="${image.url}" alt="${image.alt}"></li>`)
+  .join('');
 
-
-list.insertAdjacentHTML('afterbegin', arrs.join(''));
+list.insertAdjacentHTML('afterbegin', icon);

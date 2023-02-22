@@ -9,10 +9,11 @@ const ingredients = [
   'Condiments',
 ];
 const list = document.querySelector('ul#ingredients');
+const array = []
 for (let i = 0; i < ingredients.length; i++) {
   let elmentsIngredients = document.createElement('li');
   elmentsIngredients.textContent = ingredients[i];
   elmentsIngredients.classList.add('item');
-  ingredients[i] = elmentsIngredients.outerHTML;
+  array.push(elmentsIngredients.outerHTML);
 }
-list.innerHTML += ingredients.join('');
+list.innerHTML += array.join('');
